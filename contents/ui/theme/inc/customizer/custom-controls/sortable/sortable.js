@@ -1,18 +1,58 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+/**
+ * File sortable.js
+ *
+ * Handles sortable list
+ *
+ * @package Astra
+ */
+
+	wp.customize.controlConstructor['ast-sortable'] = wp.customize.Control.extend({
+
+		ready: function() {
+
+			'use strict';
+
+			var control = this;
+
+			// Set the sortable container.
+			control.sortableContainer = control.container.find( 'ul.sortable' ).first();
+
+			// Init sortable.
+			control.sortableContainer.sortable({
+
+				// Update value when we stop sorting.
+				stop: function() {
+					control.updateValue();
+				}
+			}).disableSelection().find( 'li' ).each( function() {
+
+					// Enable/disable options when we click on the eye of Thundera.
+					jQuery( this ).find( 'i.visibility' ).click( function() {
+						jQuery( this ).toggleClass( 'dashicons-visibility-faint' ).parents( 'li:eq(0)' ).toggleClass( 'invisible' );
+					});
+			}).click( function() {
+
+				// Update value on click.
+				control.updateValue();
+			});
+		},
+
+		/**
+		 * Updates the sorting list
+		 */
+		updateValue: function() {
+
+			'use strict';
+
+			var control = this,
+		    newValue = [];
+
+			this.sortableContainer.find( 'li' ).each( function() {
+				if ( ! jQuery( this ).is( '.invisible' ) ) {
+					newValue.push( jQuery( this ).data( 'value' ) );
+				}
+			});
+
+			control.setting.set( newValue );
+		}
+	});

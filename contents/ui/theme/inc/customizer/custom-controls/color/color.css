@@ -1,18 +1,16 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+.customize-control-ast-color .wp-color-result span {
+background: #f7f7f7;
+}
+.customize-control-ast-color .wp-color-result span.color-alpha {
+height:22px !important;
+}
+.customize-control-ast-color .wp-picker-container {
+float: left;
+}
+.customize-control-ast-color .ast-color-picker-alpha.wp-color-picker {
+width: 96px !important;
+line-height: 17px;
+}
+.customize-control-ast-color .wp-picker-clear {
+margin-left: 2%;
+}

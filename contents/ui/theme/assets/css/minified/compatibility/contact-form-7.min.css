@@ -1,18 +1,1 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+.wpcf7 form{position:relative}.wpcf7 form>div,.wpcf7 form>p{margin-bottom:1.2em}.wpcf7 .wpcf7-form-control-wrap{width:100%;display:block}.wpcf7 input:not([type=submit]):focus,.wpcf7 select:focus,.wpcf7 textarea:focus{background:#fff;border-color:#eaeaea;outline:0;-webkit-box-shadow:none;box-shadow:none}.wpcf7 input:not([type=submit]),.wpcf7 select,.wpcf7 textarea{width:100%;padding:.75em}.wpcf7 input[type=file]{color:#666;height:auto;border-width:1px;border-style:solid;border-color:#eaeaea;-webkit-border-radius:2px;border-radius:2px;background:#fafafa;-webkit-box-shadow:none;box-shadow:none;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;-webkit-transition:all .2s linear;transition:all .2s linear}.wpcf7 input[type=checkbox],.wpcf7 input[type=radio]{display:inline-block;background:#e9eef2;color:#555;clear:none;cursor:pointer;line-height:0;height:1.2em;margin:-3px 4px 0 0;outline:0;padding:0;-webkit-border-radius:.2em;border-radius:.2em;text-align:center;vertical-align:middle;width:1.4em;min-width:1.4em;-webkit-transition:all .2s linear;transition:all .2s linear}.wpcf7 .wpcf7-validation-errors{border-color:red}

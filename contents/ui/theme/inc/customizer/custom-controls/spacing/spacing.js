@@ -1,18 +1,51 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+/**
+ * File spacing.js
+ *
+ * Handles the spacing
+ *
+ * @package Astra
+ */
+
+	wp.customize.controlConstructor['ast-spacing'] = wp.customize.Control.extend({
+
+		ready: function() {
+
+			'use strict';
+
+			var control = this,
+		    value;
+
+			// Set the spacing container.
+			control.spacingContainer = control.container.find( 'ul.ast-spacing-wrapper' ).first();
+
+			// Save the value.
+			control.spacingContainer.on( 'change keyup paste', 'input.ast-spacing-input', function() {
+
+				value = jQuery( this ).val();
+
+				// Update value on change.
+				control.updateValue();
+			});
+		},
+
+		/**
+		 * Updates the sorting list
+		 */
+		updateValue: function() {
+
+			'use strict';
+
+			var control = this,
+		    newValue = {};
+
+			this.spacingContainer.find( 'input.ast-spacing-input' ).each( function() {
+				var spacing_input = jQuery( this ),
+				item = spacing_input.data( 'id' ),
+				item_value = spacing_input.val();
+
+				newValue[item] = item_value;
+			});
+
+			control.setting.set( newValue );
+		}
+	});

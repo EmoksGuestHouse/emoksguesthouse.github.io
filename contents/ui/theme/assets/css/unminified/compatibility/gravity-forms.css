@@ -1,18 +1,37 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+
+.gform_wrapper form {
+position: relative;
+}
+.gform_wrapper select {
+height: 2.2em;
+border-width: 1px;
+border-style: solid;
+border-color: #eaeaea;
+-webkit-border-radius: 2px;
+border-radius: 2px;
+background: #fafafa;
+padding: 0;
+}
+.gform_wrapper .ui-datepicker-header select {
+padding: inherit;
+}
+.gform_wrapper .gform_body .gfield_checkbox li > label {
+margin-top: 4px;
+}
+.gform_wrapper input:not([type="submit"]):focus,
+.gform_wrapper textarea:focus,
+.gform_wrapper select:focus {
+background: #fff;
+border-color: #eaeaea;
+outline: 0;
+-webkit-box-shadow: none;
+box-shadow: none;
+}
+.ui-datepicker-header select {
+padding: 0;
+}
+@media (max-width: 768px) {
+.gform_wrapper.gf_browser_chrome form > .gform_body {
+width: 100%;
+}
+}

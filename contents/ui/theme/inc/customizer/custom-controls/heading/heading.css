@@ -1,18 +1,33 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+.customize-control-ast-heading {
+margin: 20px 0;
+}
+.customize-control-ast-heading .ast-heading-wrapper {
+margin: 0 -12px;
+padding-left: 4px;
+}
+.customize-control-ast-heading .customize-control-title {
+display: block;
+padding: 14px 12px;
+margin: 0;
+border-width: 1px 0;
+border-style: solid;
+border-color: #dddddd;
+background-color: #fff;
+font-size: 12px;
+font-weight: 600;
+letter-spacing: 0.7px;
+line-height: 1;
+text-transform: uppercase;
+}
+.customize-control-ast-heading .customize-control-caption {
+top: 50%;
+transform: translateY(-50%);
+position: absolute;
+right: 0;
+font-size: 11px;
+font-weight: 500;
+letter-spacing: 1px;
+}
+.customize-control-ast-heading .customize-control-description {
+margin-top: 10px;
+}

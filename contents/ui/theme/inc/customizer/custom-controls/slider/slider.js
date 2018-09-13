@@ -1,18 +1,49 @@
-<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
-<html><head>
-<title>401 Unauthorized</title>
-<style>
-    body {margin: 20px; font-family: helvetica, sans-serif; max-width: 800px;}
-    .error {color: #e00;}
-    pre {font-size: 16px;}
-    h1 {font-size: 28px;}
-</style>
-</head><body>
-<h1>Unauthorized</h1>
-<p>This server could not verify that you
-are authorized to access the document
-requested.  Either you supplied the wrong
-credentials (e.g., bad password), or your
-browser doesn't understand how to supply
-the credentials required.</p>
-</body></html>
+/**
+ * File slider.js
+ *
+ * Handles Slider control
+ *
+ * @package Astra
+ */
+
+	wp.customize.controlConstructor['ast-slider'] = wp.customize.Control.extend({
+
+		ready: function() {
+
+			'use strict';
+
+			var control = this,
+				value,
+				thisInput,
+				inputDefault,
+				changeAction;
+
+			// Update the text value.
+			jQuery( 'input[type=range]' ).on( 'input change', function() {
+				var value 		 = jQuery( this ).attr( 'value' ),
+					input_number = jQuery( this ).closest( '.wrapper' ).find( '.astra_range_value .value' );
+
+				input_number.val( value );
+				input_number.change();
+			});
+
+			// Handle the reset button.
+			jQuery( '.ast-slider-reset' ).click( function() {
+				var wrapper 		= jQuery( this ).closest( '.wrapper' ),
+					input_range   	= wrapper.find( 'input[type=range]' ),
+					input_number 	= wrapper.find( '.astra_range_value .value' ),
+					default_value	= input_range.data( 'reset_value' );
+
+				input_range.val( default_value );
+				input_number.val( default_value );
+				input_number.change();
+			});
+
+			// Save changes.
+			this.container.on( 'input change', 'input[type=number]', function() {
+				var value = jQuery( this ).val();
+				jQuery( this ).closest( '.wrapper' ).find( 'input[type=range]' ).val( value );
+				control.setting.set( value );
+			});
+		}
+	});
